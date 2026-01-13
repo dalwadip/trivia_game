@@ -17,10 +17,11 @@ for question in trivia_data: #loop via each question, and present the question a
     options = question['options'] #extracting the list
 
     for i in range(len(options)):
-        print(f"{letters[i]}. {options[i]}") #outputs: A. ice
+        print(f"  {letters[i]}. {options[i]}") #outputs: A. ice
 
-    choice = input("Your choice (A/B/C): ").lower().strip()
+    choice = input("Your choice (A/B/C): ").upper().strip()
 
+    print(choice, letters)
     if choice in letters: #checks if choice is in letters, if not then not valid choice
         index = letters.index(choice) #.index(): gets the index of this value
         selected = options[index]
@@ -35,4 +36,4 @@ for question in trivia_data: #loop via each question, and present the question a
 
     question_number += 1
 
-print(f"Quiz complete! You scored {score} / {len(trivia_data)}")
+print(f"Quiz complete! You scored {score} / {len(trivia_data)}!")
